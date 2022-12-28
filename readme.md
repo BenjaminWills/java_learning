@@ -171,3 +171,9 @@ To define an array we use `[]` at varuable declaration.
 ```java
 type[] variableName = {x,y,z};
 ```
+
+for multidimensional arrays, we need to add more notation
+
+```java
+type[][] variableName = {{x,y,z},{w,p,q}}
+```
