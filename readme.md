@@ -163,3 +163,11 @@ for (type variableName : arrayName){
     // code
 }
 ```
+
+## Arrays
+
+To define an array we use `[]` at varuable declaration.
+
+```java
+type[] variableName = {x,y,z};
+```
