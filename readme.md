@@ -177,3 +177,20 @@ for multidimensional arrays, we need to add more notation
 ```java
 type[][] variableName = {{x,y,z},{w,p,q}}
 ```
+
+# Methods
+
+Since Java is `object oriented` functions are actually methods, a method is defined as follows:
+
+```java
+public class Main {
+    static void myMethod(){
+        // Code
+    }
+}
+```
+
+- `static` means that the method belongs to the Main class, and is not an object of the main class
+- `void` means that the method does not have a `return` value
+
+## Calling methods
