@@ -69,3 +69,66 @@ Datatypes can be changed by simply declaring new variables being equal to variab
 ```java
 type variableName = (newType)(variable);
 ```
+
+## Logic in Java
+
+Java has a few conditional statements:
+
+- Use `if`,`else` if you only have two conditions
+- Use `if`, `elseif` to specify a new condition to test
+- Use `switch` to specify many alternative blocks of code to be executed
+
+### if else
+
+```Java
+if (conditionOne) {
+    outcomeOne
+} else {
+    outcomeTwo
+}
+```
+
+### if elseif
+
+```java
+if (conditionOne){
+    outcomeOne
+} elseif (conditionTwo){
+    outcomeTwo
+} ... else{
+    finalOutcome
+}
+```
+
+### Shorthand if else
+
+These are called `ternary operators`:
+
+```java
+variable = (condition) ? expressionTrue:expressionFalse
+```
+
+this is equivalent to
+
+```java
+if (condition){
+    expressionTrue
+} else{
+    expressionFalse
+}
+```
+
+### switch
+
+```java
+switch(expression){
+    case x:
+        outputOne
+        break;
+    case y:
+        outputTwo
+        break;
+    default:
+        outputThree
+}
+```
