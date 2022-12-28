@@ -1,9 +1,9 @@
 public class Main {
     // comment
-    static void myMethod(String name){
-        System.out.println(name);
+    static void myMethod(String name, int age){
+        System.out.println(name + " is " + age + " years old!");
     }
     public static void main(String[] args){
-        myMethod("hello");
+        myMethod("Ben",21);
     }
 }
