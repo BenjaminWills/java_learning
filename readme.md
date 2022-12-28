@@ -61,3 +61,7 @@ type variableOne = a,variableTwo = b;
 | double    | 8 bytes | Stores fractional numbers. Sufficient for storing 15 decimal digits               |
 | boolean   | 1 bit   | Stores true or false values                                                       |
 | char      | 2 bytes | Stores a single character/letter or ASCII values                                  |
+
+## Casting Data
+
+Datatypes can be changed by simply declaring new variables being equal to variables of a different datatype. `Widening Casting` is the process of converting a bytewise smaller datatype to a larger one, and `Narrowing Casting` is the opposite.
