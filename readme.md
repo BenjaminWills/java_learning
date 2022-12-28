@@ -65,3 +65,7 @@ type variableOne = a,variableTwo = b;
 ## Casting Data
 
 Datatypes can be changed by simply declaring new variables being equal to variables of a different datatype. `Widening Casting` is the process of converting a bytewise smaller datatype to a larger one, and `Narrowing Casting` is the opposite.
+
+```java
+type variableName = (newType)(variable);
+```
