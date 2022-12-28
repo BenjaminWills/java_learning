@@ -1,9 +1,11 @@
 public class Main {
     // comment
-    static void myMethod(String name, int age){
-        System.out.println(name + " is " + age + " years old!");
+    static String myMethod(String name, int age){
+        return name + " is " + age + " years old!";
     }
     public static void main(String[] args){
-        myMethod("Ben",21);
+        System.out.println(
+            myMethod("Ben",21)
+            );
     }
 }

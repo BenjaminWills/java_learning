@@ -209,8 +209,12 @@ public class Main {
 
 ## Paramaters
 
+A method can have multiple paramaters, they must be typed.
+
 ```java
-public void myMethod(String name){
-    System.out.println(name);
-}
+static String myMethod(String name, int age){
+        return name + " is " + age + " years old!";
+    }
 ```
+
+Note that `void` has become `String` as we have a return value now, of type `String`.
