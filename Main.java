@@ -1,9 +1,9 @@
 public class Main {
     // comment
-    static void myMethod() {
-        System.out.println("Hello");
+    static void myMethod(String name){
+        System.out.println(name);
     }
     public static void main(String[] args){
-        myMethod();
+        myMethod("hello");
     }
 }

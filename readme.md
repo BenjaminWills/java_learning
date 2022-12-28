@@ -194,3 +194,23 @@ public class Main {
 - `void` means that the method does not have a `return` value
 
 ## Calling methods
+
+```java
+public class Main {
+    // comment
+    static void myMethod() {
+        System.out.println("Hello");
+    }
+    public static void main(String[] args){
+        myMethod();
+    }
+}
+```
+
+## Paramaters
+
+```java
+public void myMethod(String name){
+    System.out.println(name);
+}
+```
