@@ -132,3 +132,34 @@ switch(expression){
         outputThree
 }
 ```
+
+## Loops
+
+While loops:
+
+```java
+while (condition){
+    // code
+}
+```
+
+For loops:
+
+```java
+for (statementOne; statementTwo, statementThree){
+    // code
+}
+```
+
+- statement one is executed before the code block (usually the declaration of the starting index)
+- statement two is the condition for termination of the code block
+- statement three is executed every time the code block is, i.e on each loop (usually an iterator i++)
+
+For each loops:
+This loop is exclusively used to loop through an array.
+
+```java
+for (type variableName : arrayName){
+    // code
+}
+```
