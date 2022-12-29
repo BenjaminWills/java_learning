@@ -42,7 +42,7 @@
     - [Loop Through Enum](#loop-through-enum)
   - [User Input](#user-input)
     - [Input Types](#input-types)
-    - [](#)
+  - [Dates](#dates)
 
 ## Syntax
 
@@ -672,4 +672,28 @@ class Main {
 | nextLong()    | Reads a long from user    |
 | nextShort()   | Reads a short from user   |
 
-###
+## Dates
+
+The `java.time` package allows us to access the date and time in java.
+
+- `LocalDate` - date (yyyy-MM-dd)
+- `LocalTime` - time (hr-min-sec-nanosec)
+- `LocalDateTime` - both of the above
+- `DateTimeFormatter` - parsing of date objects
+
+```java
+import java.time.LocalDateTime;
+import java.time.DateTimeFormatter;
+
+public class Main {
+    public static void main(String[] args){
+        LocalDateTime myDate = LocalDateTime.now();
+        System.out.println("Before formatting: " + myDate);
+        DateTimeFormatter myFormatter = DatetimeFormatter.ofPattern("dd-MM-yyy HH:mm:ss");
+
+        String formattedDate = myDateObj.format(myFormatter);
+        System.out.println("After formatting: " + formattedDate);
+
+    }
+}
+```
