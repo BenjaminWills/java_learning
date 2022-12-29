@@ -30,6 +30,9 @@
     - [Non Access Modifiers](#non-access-modifiers)
   - [Encapsulation](#encapsulation)
     - [Get and Set](#get-and-set)
+  - [Packages and API](#packages-and-api)
+    - [Built-in Packages](#built-in-packages)
+    - [User-defined Packages](#user-defined-packages)
 
 ## Syntax
 
@@ -465,3 +468,39 @@ public class Car {
 ```
 
 So this allows for control of read/write only data.
+
+## Packages and API
+
+A `package` in java is a directory in which related classes are stored, there are two types:
+
+- Built-in packages (java API)
+- User-defined packages
+
+### Built-in Packages
+
+Java comes with some prewritten packages, just as most languages do. To get access to these we need the `import` keyword.
+
+```java
+import package.name.Class; // importing a singular class
+import package.name.*; // importing the whole package
+```
+
+### User-defined Packages
+
+To create a package we use the `package` keyword within each class in the package.
+
+```java
+package mypack;
+```
+
+To save the package we need to specify a destination upon compilation:
+
+```sh
+javac -d . packageClassName.java
+```
+
+Now to run a class in this package we need to run:
+
+```sh
+java mypack.packageClassName
+```
