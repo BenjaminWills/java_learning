@@ -8,17 +8,19 @@ import java.io.BufferedReader;
 public class StorageSystem {
     
     static void createStoragePath(){
-        String storagePathName = "atm/storage/users.txt";
-        String directoryName = "atm/storage";
+        String storagePathName,directoryName;
+        storagePathName = "atm/storage/users.txt";
+        directoryName = "atm/storage";
         try{
-            File storageDirectory = new File(directoryName);
+            File storageDirectory,storagePath ;
+            storageDirectory = new File(directoryName);
             if(storageDirectory.mkdir()){
                 System.out.println("Directory Created: " + storageDirectory.getName());
             }else{
                 System.out.println("Directory already exists");
             }
 
-            File storagePath = new File(storagePathName);
+            storagePath = new File(storagePathName);
             if (storagePath.createNewFile()){
             System.out.println("File Created: " + storagePath.getName());
             }else{
@@ -33,7 +35,8 @@ public class StorageSystem {
     }
 
     static HashMap<String,Object> getUserHashMap(User atmUser){
-        HashMap<String,Object> userHash = new HashMap<>();
+        HashMap<String,Object> userHash;
+        userHash = new HashMap<>();
         try{
         userHash.put("pin",atmUser.pin);
         userHash.put("balance",atmUser.balance);
@@ -49,7 +52,8 @@ public class StorageSystem {
 
     static void writeToStorage(User atmUser){
         try{
-            FileWriter myWriter = new FileWriter("atm/storage/users.txt",true);
+            FileWriter myWriter; 
+            myWriter = new FileWriter("atm/storage/users.txt",true);
             myWriter.write(
                 getUserHashMap(atmUser).toString() + "\n"
             );
