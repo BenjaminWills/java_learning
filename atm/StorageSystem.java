@@ -2,6 +2,7 @@ package atm;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
+import java.io.FileWriter;
 
 public class StorageSystem {
     
@@ -26,18 +27,27 @@ public class StorageSystem {
         }
     }
 
-    static HashMap addUserInformation(User atmUser){
+    static HashMap getUserHashMap(User atmUser){
         HashMap<String,Object> userHash = new HashMap<>();
+        try{
         userHash.put("pin",atmUser.pin);
         userHash.put("balance",atmUser.balance);
+        userHash.put("id",atmUser.id);
         userHash.put("firstName", atmUser.firstName);
         userHash.put("lastName",atmUser.lastName);
         userHash.put("age",atmUser.age);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         return userHash;
+    }
+
+    static void writeToStorage(){
+        System.out.println("123");
     }
 
     public static void main(String[] args){
         User me = new User("Ben","Wills",21);
-        System.out.println(addUserInformation(me));
+        System.out.println(getUserHashMap(me));
     }
 }
