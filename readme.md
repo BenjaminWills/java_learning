@@ -40,6 +40,7 @@
   - [Interfaces](#interfaces)
   - [Enums](#enums)
     - [Loop Through Enum](#loop-through-enum)
+  - [User Input](#user-input)
 
 ## Syntax
 
@@ -635,5 +636,23 @@ public class Main{
 ```java
 for (Level myVar : Level.values()){
     System.out.println(myVar);
+}
+```
+
+## User Input
+
+We use the built in java `Scanner` class to capture user input.
+
+```java
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter Username");
+
+        String userName = scanner.nextLine();
+        System.out.println("Username is: "+ userName);
+    }
 }
 ```
