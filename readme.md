@@ -33,6 +33,7 @@
   - [Packages and API](#packages-and-api)
     - [Built-in Packages](#built-in-packages)
     - [User-defined Packages](#user-defined-packages)
+  - [Inheritance](#inheritance)
 
 ## Syntax
 
@@ -504,3 +505,34 @@ Now to run a class in this package we need to run:
 ```sh
 java mypack.packageClassName
 ```
+
+## Inheritance
+
+Classes can inherit from other classes, meaning that methods and attributes are shared from parent to child, we categorise this:
+
+- subclass (child) - The inheriter
+- superclass (parent) - The class being inherited from
+
+To inherit a class we use the `extends` keyword. For example, a `car` is a `vehicle`, thus our car class should inherit from a vehicle class.
+
+```java
+class Vehicle {
+    protected String brand = "ford";
+    public void honk() {
+        System.out.println("HONK")
+    }
+}
+
+class Car extends Vehicle {
+    private String modelName = "mustang";
+    public static void main(String[] args){
+        Car myCar = new Car();
+
+        myCar.honk() // inherited method
+
+        System.out.println(myCar.brand + " " + myCar.modelName) //inherited attribute
+    }
+}
+```
+
+The `final` keyword stops inheritance from classes.
