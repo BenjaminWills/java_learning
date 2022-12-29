@@ -304,3 +304,29 @@ public class Car {
 ```
 
 of course using the `final` keyword will stop this from happening.
+
+## Methods
+
+A method is a function assosiated with a class, we've met them before.
+
+```java
+public class Car {
+    int seats = 5;
+    boolean isDriving = false;
+
+    static void drive() {
+        isDriving = true;
+    }
+
+    public static void main(String[] args) {
+        Car newCar = new Car();
+        newCar.x = 4;
+        System.out.println(newCar.seats);
+    }
+}
+```
+
+Here the drive method makes the car drive.
+
+A `static` method can be accessed without creating an object of the class, whereas a `public` method can only be accessed
+by an object.
