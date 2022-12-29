@@ -28,6 +28,8 @@
   - [Modifiers](#modifiers)
     - [Access Modifiers](#access-modifiers)
     - [Non Access Modifiers](#non-access-modifiers)
+  - [Encapsulation](#encapsulation)
+    - [Get and Set](#get-and-set)
 
 ## Syntax
 
@@ -411,7 +413,7 @@ The public keyword is an `access modifier` meaning that it is used to set the ac
 
 a `public` class is accessable by ANY other class, whereas by default it is only accessable to classes in the same package.
 
-Attributes, methods and constructors we have a few more:
+**Attributes**, **methods** and **constructors** we have a few more:
 
 - `public` - accessible to all classes
 - `private` - only accessible to declared class
@@ -420,12 +422,12 @@ Attributes, methods and constructors we have a few more:
 
 ### Non Access Modifiers
 
-For classes we have:
+For **classes** we have:
 
 - `final` - makes class non inheritable
 - `abstract` - cannot create objects with this class
 
-For attributes and methods:
+For **attributes** and **methods**:
 
 - `final` - attributes/methods cannot be overwritten
 - `static` - attributes/methods belong to the class not the object
@@ -433,3 +435,33 @@ For attributes and methods:
 - `transient` - attributes and methods are skipped when seriealzin (compiling) the object containing them
 - `synchronized` - methods can only be accessed by one thread at a time
 - `volatile` - the value of an attribute is not cached thread-locally and is always read from memory
+
+## Encapsulation
+
+This is the method of hiding `sensitive` data. The process consists of 2 steps:
+
+- declare class variables/attributes as `private`
+- provide public **get**/**set** methods to access and update the value of a private variable
+
+### Get and Set
+
+A `get` method returns the variables value, a `set` method sets the variables value.
+
+```java
+public class Car {
+    private int seats;
+    private boolean isDriving;
+
+    // Getter
+    public int getSeats() {
+        return seats;
+    }
+
+    // Setter
+    public void setSeats(int number){
+        this.seats = number;
+    }
+}
+```
+
+So this allows for control of read/write only data.
