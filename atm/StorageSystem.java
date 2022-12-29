@@ -42,12 +42,24 @@ public class StorageSystem {
         return userHash;
     }
 
-    static void writeToStorage(){
-        System.out.println("123");
+    static void writeToStorage(User atmUser){
+        try{
+            FileWriter myWriter = new FileWriter("storage/users.txt");
+            myWriter.write(
+                getUserHashMap(atmUser).toString()
+            );
+            myWriter.close();
+            System.out.println("Successfully wrote to users.txt!");
+
+        }catch (IOException e){
+            System.out.println("An error has occured");
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args){
         User me = new User("Ben","Wills",21);
-        System.out.println(getUserHashMap(me));
+        createStoragePath();
+        writeToStorage(me);
     }
 }
