@@ -34,6 +34,7 @@
     - [Built-in Packages](#built-in-packages)
     - [User-defined Packages](#user-defined-packages)
   - [Inheritance](#inheritance)
+  - [Polymorphism](#polymorphism)
 
 ## Syntax
 
@@ -536,3 +537,7 @@ class Car extends Vehicle {
 ```
 
 The `final` keyword stops inheritance from classes.
+
+## Polymorphism
+
+This is just the case of redefining certain methods when inheriting from another class.
