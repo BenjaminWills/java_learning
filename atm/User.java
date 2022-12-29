@@ -3,7 +3,8 @@ package atm;
 public class User {
     float balance = 0;
     String firstName,lastName;
-    int age, id;
+    int age;
+    final int id = (int)(System.currentTimeMillis() / 1000l);
     String pin = "0000";
 
     public User(String userFirstName, String userLastName, int userAge){
