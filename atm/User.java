@@ -14,6 +14,6 @@ public class User {
 
     public static void main(String[] args){
         User me = new User("Ben","Wills",21);
-        System.out.println(me.age);
+        System.out.println(me.balance);
     }
 }
