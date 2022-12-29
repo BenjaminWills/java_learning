@@ -273,3 +273,34 @@ We use the `new` key word to instantiate an object from a class.
 ### Using Multiple Classes
 
 A class name should be identical to the file name, and java files should be organised in folders.
+
+## Attributes
+
+Our car class has one attribute which is `seats`, we can access these using `.` notation:
+
+```java
+public class Car {
+    int seats = 5;
+
+    public static void main(String[] args) {
+        Car newCar = new Car();
+        System.out.println(newCar.seats);
+    }
+}
+```
+
+We can also `modify` attributes:
+
+```java
+public class Car {
+    int seats = 5;
+
+    public static void main(String[] args) {
+        Car newCar = new Car();
+        newCar.x = 4;
+        System.out.println(newCar.seats);
+    }
+}
+```
+
+of course using the `final` keyword will stop this from happening.
