@@ -43,6 +43,7 @@
   - [User Input](#user-input)
     - [Input Types](#input-types)
   - [Dates](#dates)
+  - [ArrayList](#arraylist)
 
 ## Syntax
 
@@ -694,6 +695,28 @@ public class Main {
         String formattedDate = myDateObj.format(myFormatter);
         System.out.println("After formatting: " + formattedDate);
 
+    }
+}
+```
+
+## ArrayList
+
+The `ArrayList` library allows us to mutate arrays, Java does not support adding or removing elements from one.
+
+```java
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Main {
+    public static void main(String[] args){
+        ArrayList<String> cars = new ArrayList<String>();
+        cars.add("Volvo")
+        cars.get(0);
+        cars.set(0,"Mercedes");
+        cars.remove(0);
+        cars.clear();
+        cars.size();
+        Collections.sort(cars)
     }
 }
 ```
