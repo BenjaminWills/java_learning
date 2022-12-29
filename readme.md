@@ -45,6 +45,7 @@
   - [Dates](#dates)
   - [ArrayList](#arraylist)
   - [HashMap](#hashmap)
+  - [Exceptions](#exceptions)
 
 ## Syntax
 
@@ -738,5 +739,26 @@ public class Main {
         for (String i: capitalCities.keySet()){
             System.out.println("key: " + i + " value: " + capitalCities.get(i));
         }
+}
+```
+
+## Exceptions
+
+Like in JavaScript we can throw exceptions, and use `try`,`catch`, `finally` blocks to process errors.
+
+```java
+public class Main{
+    public static void main(String[] args){
+        try{ // try running code block
+            int[] numbers = {1,2,3};
+            System.out.println(numbers[21313]);
+        }
+        catch (Exception e){ // catches errors
+            System.out.println("Something went wrong.");
+        }
+        finally{ // always runs, regardless of errors
+            System.out.println("Try catch is finished");
+        }
+    }
 }
 ```
