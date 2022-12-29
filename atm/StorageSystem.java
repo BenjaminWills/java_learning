@@ -7,11 +7,15 @@ import java.io.FileWriter;
 public class StorageSystem {
     
     static void createStoragePath(){
-        String storagePathName = "storage/users.txt";
-        String directoryName = "storage";
+        String storagePathName = "atm/storage/users.txt";
+        String directoryName = "atm/storage";
         try{
             File storageDirectory = new File(directoryName);
-            storageDirectory.mkdir();
+            if(storageDirectory.mkdir()){
+                System.out.println("Directory Created: " + storageDirectory.getName());
+            }else{
+                System.out.println("Directory already exists");
+            }
 
             File storagePath = new File(storagePathName);
             if (storagePath.createNewFile()){
@@ -44,9 +48,9 @@ public class StorageSystem {
 
     static void writeToStorage(User atmUser){
         try{
-            FileWriter myWriter = new FileWriter("storage/users.txt");
+            FileWriter myWriter = new FileWriter("atm/storage/users.txt",true);
             myWriter.write(
-                getUserHashMap(atmUser).toString()
+                getUserHashMap(atmUser).toString() + "\n"
             );
             myWriter.close();
             System.out.println("Successfully wrote to users.txt!");
@@ -59,7 +63,9 @@ public class StorageSystem {
 
     public static void main(String[] args){
         User me = new User("Ben","Wills",21);
+        User you = new User("Freya","Salt",21);
         createStoragePath();
         writeToStorage(me);
+        writeToStorage(you);
     }
 }
