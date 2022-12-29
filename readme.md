@@ -37,6 +37,7 @@
   - [Polymorphism](#polymorphism)
   - [Inner Classes](#inner-classes)
   - [Abstraction](#abstraction)
+  - [Interfaces](#interfaces)
 
 ## Syntax
 
@@ -571,3 +572,40 @@ Abstraction is the process of splitting up code into many different functions to
 
 - Abstract Classes are restricted to not be used to make objects, to access them they must be used in inheritance
 - Abstreat methods can only be used in an abstract class and have no body. An abstract class is almost a blueprint for the blueprint
+
+```java
+abstract class Animal {
+    public abstract void animalSound();
+    public int howManyLegs(int legs){
+        return legs;
+    }
+}
+class Pig extends Animal {
+    public void animalSound(){
+        System.out.println("oink");
+    }
+}
+```
+
+## Interfaces
+
+This is another way to achieve abstraction in Java, it is a **completely** abstract class. We use the `implements` key word is used instead of `extends` here.
+
+```java
+interface Animal {
+    public void animalSound();
+    public void sleep();
+}
+
+interface Mamal {
+    public void isPregnant();
+}
+
+Pig implements Animal, Mamal {
+    public void animalSound() {
+        System.out.println("OINK");
+    }
+}
+```
+
+These are used entirely for inheritance.
