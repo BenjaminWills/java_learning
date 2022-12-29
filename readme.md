@@ -26,6 +26,8 @@
   - [Methods](#methods-1)
   - [Constructors](#constructors)
   - [Modifiers](#modifiers)
+    - [Access Modifiers](#access-modifiers)
+    - [Non Access Modifiers](#non-access-modifiers)
 
 ## Syntax
 
@@ -405,6 +407,29 @@ The public keyword is an `access modifier` meaning that it is used to set the ac
 - Access Modifiers
 - Non-Access Modifiers
 
+### Access Modifiers
+
 a `public` class is accessable by ANY other class, whereas by default it is only accessable to classes in the same package.
 
 Attributes, methods and constructors we have a few more:
+
+- `public` - accessible to all classes
+- `private` - only accessible to declared class
+- `default` - only accessable in same class
+- `protected` - only accessable in subclasses and within the same package
+
+### Non Access Modifiers
+
+For classes we have:
+
+- `final` - makes class non inheritable
+- `abstract` - cannot create objects with this class
+
+For attributes and methods:
+
+- `final` - attributes/methods cannot be overwritten
+- `static` - attributes/methods belong to the class not the object
+- `abstract` - can only be used in an abstract class on methods.
+- `transient` - attributes and methods are skipped when seriealzin (compiling) the object containing them
+- `synchronized` - methods can only be accessed by one thread at a time
+- `volatile` - the value of an attribute is not cached thread-locally and is always read from memory
