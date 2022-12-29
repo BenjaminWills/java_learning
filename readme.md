@@ -35,6 +35,7 @@
     - [User-defined Packages](#user-defined-packages)
   - [Inheritance](#inheritance)
   - [Polymorphism](#polymorphism)
+  - [Inner Classes](#inner-classes)
 
 ## Syntax
 
@@ -541,3 +542,24 @@ The `final` keyword stops inheritance from classes.
 ## Polymorphism
 
 This is just the case of redefining certain methods when inheriting from another class.
+
+## Inner Classes
+
+In java you can nest classes, these can be `private` and thus only accessable to the parent class.
+
+```java
+class OuterClass{
+    int x = 12;
+
+    class InnerClass{
+        int y = 14;
+    }
+}
+
+public class Main{
+    public static void main(String[] args){
+        OuterClass outer = new OuterClass();
+        OuterClass.InnerClass inner = outer.new InnerClass();
+    }
+}
+```
