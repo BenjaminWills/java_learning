@@ -239,3 +239,37 @@ public static void main(String[] args) {
 ## Recursion
 
 Recursion works like it does anywhere else.
+
+# Classes
+
+Java is an object oriented language, so all functionality comes from classes.
+
+## Creating Classes
+
+We can create a class with the name `Car` with some variable `seats`:
+
+```java
+public class Car {
+    int seats = 5;
+}
+```
+
+## Creating Objects
+
+As we know, classes are blueprints for objects to be created on. A class can be a car and the object would be a specific model of a car. Following on from our `Car` example, we can create a new car:
+
+```java
+public class Car {
+    int seats = 5;
+
+    public static void main(String[] args) {
+        Car newCar = new Car();
+    }
+}
+```
+
+We use the `new` key word to instantiate an object from a class.
+
+### Using Multiple Classes
+
+A class name should be identical to the file name, and java files should be organised in folders.
