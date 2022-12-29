@@ -21,5 +21,6 @@ public class Main {
 
         String userName = scanner.nextLine();
         System.out.println("Username is: "+ userName);
+        scanner.close();
     }
 }
