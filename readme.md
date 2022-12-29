@@ -44,6 +44,7 @@
     - [Input Types](#input-types)
   - [Dates](#dates)
   - [ArrayList](#arraylist)
+  - [HashMap](#hashmap)
 
 ## Syntax
 
@@ -718,5 +719,24 @@ public class Main {
         cars.size();
         Collections.sort(cars)
     }
+}
+```
+
+## HashMap
+
+A familair example to me of a `hashmap` is a python dictionary, which consists of key value pairs.
+
+```java
+import java.util.HashMap;
+
+public class Main {
+    public static void main(String[] args){
+        HashMap<String,String> capitalCities = new HashMap<String,String>();
+        capitalCities.put("England","London");
+        capitalCities.get("England");
+
+        for (String i: capitalCities.keySet()){
+            System.out.println("key: " + i + " value: " + capitalCities.get(i));
+        }
 }
 ```
