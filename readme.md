@@ -38,6 +38,8 @@
   - [Inner Classes](#inner-classes)
   - [Abstraction](#abstraction)
   - [Interfaces](#interfaces)
+  - [Enums](#enums)
+    - [Loop Through Enum](#loop-through-enum)
 
 ## Syntax
 
@@ -609,3 +611,29 @@ Pig implements Animal, Mamal {
 ```
 
 These are used entirely for inheritance.
+
+## Enums
+
+An `enum` is a class that represents a group of **constants** - unchangable variables.
+
+```java
+enum Level {
+    LOW,
+    MEDIUM,
+    HIGH
+}
+public class Main{
+    public static void main(String[] args){
+        Level myVar = Level.MEDIUM;
+        System.out.println(myVar); // prints MEDIUM
+    }
+}
+```
+
+### Loop Through Enum
+
+```java
+for (Level myVar : Level.values()){
+    System.out.println(myVar);
+}
+```
