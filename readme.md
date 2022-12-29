@@ -1,5 +1,32 @@
 # Java
 
+- [Java](#java)
+  - [Syntax](#syntax)
+  - [Variable types](#variable-types)
+  - [Java Naming Conventions](#java-naming-conventions)
+  - [Java Data Types](#java-data-types)
+  - [Casting Data](#casting-data)
+  - [Logic in Java](#logic-in-java)
+    - [if else](#if-else)
+    - [if elseif](#if-elseif)
+    - [Shorthand if else](#shorthand-if-else)
+    - [switch](#switch)
+  - [Loops](#loops)
+  - [Arrays](#arrays)
+- [Methods](#methods)
+  - [Calling methods](#calling-methods)
+  - [Paramaters](#paramaters)
+  - [Method Overloading](#method-overloading)
+  - [Recursion](#recursion)
+- [Classes](#classes)
+  - [Creating Classes](#creating-classes)
+  - [Creating Objects](#creating-objects)
+    - [Using Multiple Classes](#using-multiple-classes)
+  - [Attributes](#attributes)
+  - [Methods](#methods-1)
+  - [Constructors](#constructors)
+  - [Modifiers](#modifiers)
+
 ## Syntax
 
 Every file must contain a class that has the same name as the file. All code within the:
@@ -370,3 +397,14 @@ public class Car {
     }
 }
 ```
+
+## Modifiers
+
+The public keyword is an `access modifier` meaning that it is used to set the access level for classes, attributes, methods and constructors. We have 2 types of modifiers
+
+- Access Modifiers
+- Non-Access Modifiers
+
+a `public` class is accessable by ANY other class, whereas by default it is only accessable to classes in the same package.
+
+Attributes, methods and constructors we have a few more:
