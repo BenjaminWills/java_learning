@@ -762,3 +762,23 @@ public class Main{
     }
 }
 ```
+
+## Threads
+
+Threads allow for multiple operations to run at the same time whilst running a program.
+
+```java
+public class Main extends Thread{
+    public void run() {
+        System.out.println("running on a thread");
+    }
+}
+|| // or
+public class Main implements Runnable{
+    public void run() {
+        System.out.println("running on a thread");
+    }
+}
+```
+
+However be careful. Threading introduces uncertainty in the order that the code is run. We can get over this by using the `isAlive()` method before running code.
