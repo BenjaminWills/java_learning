@@ -1,9 +1,6 @@
 package atm;
-import java.io.File;
-import java.io.IOException;
 import java.util.HashMap;
-import java.io.FileWriter;
-import java.io.BufferedReader;
+import java.io.*;
 
 public class StorageSystem {
     
@@ -50,32 +47,41 @@ public class StorageSystem {
         return userHash;
     }
 
-    static void writeToStorage(User atmUser){
+    static void writeToStorage(User atmUser, String storagePath){
         try{
-            FileWriter myWriter; 
-            myWriter = new FileWriter("atm/storage/users.txt",true);
-            myWriter.write(
-                getUserHashMap(atmUser).toString() + "\n"
+            FileOutputStream fos = new FileOutputStream(storagePath);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(
+                getUserHashMap(atmUser)
             );
-            myWriter.close();
-            System.out.println("Successfully wrote to users.txt!");
-
+            oos.close();
+            fos.close();
+            System.out.println("Successfully wrote to " + storagePath);
         }catch (IOException e){
             System.out.println("An error has occured");
             e.printStackTrace();
         }
     }
 
-    static User getUserFromId(String id, String StoragePath){
-        
-        return User;
+    static void getUserFromId(String id, String storagePath){
+        HashMap<Integer, String> userHashmap;
+        try{
+            FileInputStream fis = new FileInputStream(storagePath);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            userHashmap = (HashMap) ois.readObject();
+            ois.close();
+            fis.close();
+        }catch(IOException e) {
+            e.printStackTrace();
+        }catch(ClassNotFoundException c){
+         System.out.println("Class not found");
+         c.printStackTrace();
+        }
     }
 
     public static void main(String[] args){
         User me = new User("Ben","Wills",21);
-        User you = new User("Freya","Salt",21);
         createStoragePath();
-        writeToStorage(me);
-        writeToStorage(you);
+        writeToStorage(me,"atm/storage/users.txt");
     }
 }
