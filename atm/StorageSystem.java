@@ -31,7 +31,7 @@ public class StorageSystem {
         }
     }
 
-    static HashMap getUserHashMap(User atmUser){
+    static HashMap<String,Object> getUserHashMap(User atmUser){
         HashMap<String,Object> userHash = new HashMap<>();
         try{
         userHash.put("pin",atmUser.pin);
