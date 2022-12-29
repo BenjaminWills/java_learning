@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.io.FileWriter;
+import java.io.BufferedReader;
 
 public class StorageSystem {
     
@@ -59,6 +60,11 @@ public class StorageSystem {
             System.out.println("An error has occured");
             e.printStackTrace();
         }
+    }
+
+    static User getUserFromId(String id, String StoragePath){
+        
+        return User;
     }
 
     public static void main(String[] args){
