@@ -41,6 +41,8 @@
   - [Enums](#enums)
     - [Loop Through Enum](#loop-through-enum)
   - [User Input](#user-input)
+    - [Input Types](#input-types)
+    - [](#)
 
 ## Syntax
 
@@ -656,3 +658,18 @@ class Main {
     }
 }
 ```
+
+### Input Types
+
+| Method        | Description               |
+| ------------- | ------------------------- |
+| nextBoolean() | Reads a boolean from user |
+| nextByte()    | Reads a byte from user    |
+| nextDouble()  | Reads a double from user  |
+| nextFloat()   | Reads a float from user   |
+| nextInt()     | Reads an int from user    |
+| nextLine()    | Reads a string from user  |
+| nextLong()    | Reads a long from user    |
+| nextShort()   | Reads a short from user   |
+
+###
