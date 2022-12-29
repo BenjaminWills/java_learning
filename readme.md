@@ -36,6 +36,7 @@
   - [Inheritance](#inheritance)
   - [Polymorphism](#polymorphism)
   - [Inner Classes](#inner-classes)
+  - [Abstraction](#abstraction)
 
 ## Syntax
 
@@ -563,3 +564,10 @@ public class Main{
     }
 }
 ```
+
+## Abstraction
+
+Abstraction is the process of splitting up code into many different functions to make the code more readable for the user. The `abstract` keyword is used for classes and methods:
+
+- Abstract Classes are restricted to not be used to make objects, to access them they must be used in inheritance
+- Abstreat methods can only be used in an abstract class and have no body. An abstract class is almost a blueprint for the blueprint
