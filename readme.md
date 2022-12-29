@@ -330,3 +330,43 @@ Here the drive method makes the car drive.
 
 A `static` method can be accessed without creating an object of the class, whereas a `public` method can only be accessed
 by an object.
+
+## Constructors
+
+We can create class constructors to make life easier for our code:
+
+```java
+public class Car {
+    int seats;
+    boolean isDriving;
+
+    public Car() { // the constructor filling attributes of Car
+        seats = 4;
+        isDriving = false;
+    }
+
+    public static void main(String[] args) {
+        Car newCar = new Car();
+        System.out.println(newCar.seats);
+    }
+}
+```
+
+The constructor must match the class name. Further they can have parameters which allows for more creative objects.
+
+```java
+public class Car {
+    int seats;
+    boolean isDriving;
+
+    public Car(int carSeats, boolean carIsDriving) { // the constructor filling attributes of Car
+        seats = carSeats;
+        isDriving = carIsDriving;
+    }
+
+    public static void main(String[] args) {
+        Car newCar = new Car(4,false);
+        System.out.println(newCar.seats);
+    }
+}
+```
