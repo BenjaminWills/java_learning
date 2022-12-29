@@ -218,3 +218,24 @@ static String myMethod(String name, int age){
 ```
 
 Note that `void` has become `String` as we have a return value now, of type `String`.
+
+## Method Overloading
+
+We can allow a function to be capable of returning more than one datatype by overloading it.
+
+```java
+static int plusMethod(int x, int y){
+    return x + y;
+}
+static double plusMethod(double x, double y){
+    return x + y;
+}
+public static void main(String[] args) {
+    int myNum1 = plusMethod(8,5);
+    double myNum2 = plusmethod(1.2,3.1)
+}
+```
+
+## Recursion
+
+Recursion works like it does anywhere else.
