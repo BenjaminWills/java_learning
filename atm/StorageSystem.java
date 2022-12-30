@@ -40,13 +40,13 @@ public class StorageSystem {
         return userHash;
     }
 
-    public static void writeToStorage(User atmUser, String storageDirectory){
-        String storagePath = storageDirectory + "/" + atmUser.id; // naminng the serialised objects after the users id
+    public static void writeToStorage(HashMap<String,Object> atmUser, String storageDirectory){
+        String storagePath = storageDirectory + "/" + atmUser.get("id"); // naminng the serialised objects after the users id
         try{
             FileOutputStream fos = new FileOutputStream(storagePath);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(
-                getUserHashMap(atmUser)
+                atmUser
             );
             oos.close();
             fos.close();
@@ -79,12 +79,17 @@ public class StorageSystem {
         return userData;
     }
 
+    public static void updateUser(String userId,String field,Object value){
+        String storagePath = "atm/storage";
+        HashMap<String, Object> user = getUserFromId(userId, storagePath);
+        user.put(field, value);
+        writeToStorage(user, storagePath);
+    }
+
     public static void main(String[] args){
-        HashMap<String, Object> userData;
-        // // User me = new User("Ben","Wills",21);
-        // // createStoragePath();
-        // // writeToStorage(me,"atm/storage");
-        userData = getUserFromId("caf99fac-8a4c-44d9-b68-c7f3fe084eb1", "atm/storage");
-        System.out.println(userData);
+        User me = new User("Ben","Wills",21);
+        HashMap<String,Object> meHash = getUserHashMap(me);
+        createStoragePath();
+        writeToStorage(meHash,"atm/storage");
     }
 }
