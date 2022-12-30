@@ -10,45 +10,45 @@ public class Atm {
     static boolean sessionInProgress = true;
 
     public static void makeAccount(){
-        System.out.println("What is your first name?");
+        System.out.println("- What is your first name?");
         String firstName = scanner.nextLine();
 
-        System.out.println("What is your last name?");
+        System.out.println("- What is your last name?");
         String lastName = scanner.nextLine();
 
-        System.out.println("What is your age?");
+        System.out.println("- What is your age?");
         int age = scanner.nextInt();
 
         User newUser = new User(firstName,lastName,age);
         HashMap<String,Object> newUserHash = StorageSystem.getUserHashMap(newUser);
 
         StorageSystem.writeToStorage(newUserHash, "atm/storage");
+        System.out.println(String.format("Your account id is: %s",newUserHash.get("id")));
     }
     
     public static void transaction(Boolean sessionInProgress){
-        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter Pin");
+        System.out.println("- Enter Pin");
         String userPin = scanner.nextLine();
 
         AtmSession session = new AtmSession("880d847b-8a7f-4b6c-bad8-0703642f9850",userPin);
         
         while (sessionInProgress) {
-            System.out.println("Would you like to make a transaction today? (true or false)");
+            System.out.println("- Would you like to make a transaction today? (true or false)");
             Boolean userResponse = scanner.nextBoolean();
             
             if (userResponse){
-                System.out.println("Would you like to withdraw or deposit? (0 for withdraw, 1 for deposit)");
+                System.out.println("- Would you like to withdraw or deposit? (0 for withdraw, 1 for deposit)");
                 int transactionOption = scanner.nextInt();
                 
                 if(transactionOption == 0){
-                    System.out.println("How much would you like to withdraw today?");
+                    System.out.println("- How much would you like to withdraw today?");
                     float userAmount = scanner.nextFloat();
                     session.withdrawal(userAmount);
                     System.out.println(String.format("Your balance is now: £%f",session.user.get("balance")));
                     
                 }else{
-                    System.out.println("How much would you like to deposit today?");
+                    System.out.println("- How much would you like to deposit today?");
                     float userAmount = scanner.nextFloat();
                     session.deposit(userAmount);
                     System.out.println(String.format("Your balance is now: £%f",session.user.get("balance")));
@@ -64,7 +64,7 @@ public class Atm {
     public static void main(String[] args){
         StorageSystem.createStoragePath();
 
-        System.out.println("Would you like to:");
+        System.out.println("- Would you like to:");
         System.out.println("1. Create an account");
         System.out.println("2. Make a transaction");
         System.out.println("------------------------------------");
