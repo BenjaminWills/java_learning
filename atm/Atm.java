@@ -28,10 +28,13 @@ public class Atm {
     
     public static void transaction(Boolean sessionInProgress){
 
+        System.out.println("- Enter account id");
+        String accountId = scanner.nextLine();
+
         System.out.println("- Enter Pin");
         String userPin = scanner.nextLine();
 
-        AtmSession session = new AtmSession("880d847b-8a7f-4b6c-bad8-0703642f9850",userPin);
+        AtmSession session = new AtmSession(accountId,userPin);
         
         while (sessionInProgress) {
             System.out.println("- Would you like to make a transaction today? (true or false)");
