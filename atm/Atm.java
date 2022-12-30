@@ -6,11 +6,10 @@ import atm.StorageSystem;
 
 public class Atm {
 
-    
+    static Scanner scanner = new Scanner(System.in);
     static boolean sessionInProgress = true;
 
     public static void makeAccount(){
-        Scanner scanner = new Scanner(System.in);
         System.out.println("What is your first name?");
         String firstName = scanner.nextLine();
 
@@ -24,7 +23,6 @@ public class Atm {
         HashMap<String,Object> newUserHash = StorageSystem.getUserHashMap(newUser);
 
         StorageSystem.writeToStorage(newUserHash, "atm/storage");
-        scanner.close();
     }
     
     public static void transaction(Boolean sessionInProgress){
@@ -47,21 +45,21 @@ public class Atm {
                     System.out.println("How much would you like to withdraw today?");
                     float userAmount = scanner.nextFloat();
                     session.withdrawal(userAmount);
-                    System.out.println(session.user);
+                    System.out.println(String.format("Your balance is now: £%f",session.user.get("balance")));
                     
                 }else{
                     System.out.println("How much would you like to deposit today?");
                     float userAmount = scanner.nextFloat();
                     session.deposit(userAmount);
-                    System.out.println(session.user);
+                    System.out.println(String.format("Your balance is now: £%f",session.user.get("balance")));
                 }
                 
             }else{
                 sessionInProgress = !sessionInProgress;
                 System.out.println("Goodbye");
             }
+            System.out.println("------------------------------------");
         }
-        scanner.close();
     }
     public static void main(String[] args){
         StorageSystem.createStoragePath();
@@ -69,11 +67,10 @@ public class Atm {
         System.out.println("Would you like to:");
         System.out.println("1. Create an account");
         System.out.println("2. Make a transaction");
-        System.out.println("\n");
+        System.out.println("------------------------------------");
         
         Scanner scanner = new Scanner(System.in);
         int optionChoice = scanner.nextInt();
-        scanner.close();
 
         if (optionChoice == 1){
             makeAccount();
@@ -81,7 +78,7 @@ public class Atm {
         if (optionChoice == 2){
             transaction(sessionInProgress);
         }
-        
+        scanner.close();
     }}
 
         
