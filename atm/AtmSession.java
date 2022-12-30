@@ -1,8 +1,6 @@
 package atm;
 import java.util.HashMap;
 
-import atm.StorageSystem;
-
 public class AtmSession {
     String id,pin;
     HashMap<String,Object> user;
