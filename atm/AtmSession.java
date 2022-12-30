@@ -33,10 +33,28 @@ public class AtmSession {
     }
 
     public void deposit(float depositAmount){
+        float currentBalance = (float)this.user.get("balance");
+        this.user.put("balance",currentBalance + depositAmount);
+        StorageSystem.writeToStorage(this.user, "atm/storage");
+        System.out.println(String.format("Successfully deposited £%f!",depositAmount));
     }
-    public void withdrawal(float withdrawalAmount){}
+    public void withdrawal(float withdrawalAmount){
+        float currentBalance = (float)this.user.get("balance");
+        if (withdrawalAmount > currentBalance){
+            System.out.println(String.format("You have insufficient funds to withdraw £%f",withdrawalAmount));
+        }else{
+            this.user.put("balance",currentBalance - withdrawalAmount);
+            StorageSystem.writeToStorage(this.user, "atm/storage");
+            System.out.println(String.format("Successfully Withdrew £%f!",withdrawalAmount));
+        }
+    }
 
     public static void main(String[] args){
-        AtmSession session = new AtmSession("caf99fac-8a4c-44d9-b680-c7f3fe084eb1","0000");
+        AtmSession session = new AtmSession("90d999c3-8d9c-43a4-a990-7d2460074475","0000");
+        System.out.println(session.user);
+        session.deposit(1000);
+        System.out.println(session.user);
+        session.withdrawal(1000);
+        System.out.println(session.user);
     }
 }
