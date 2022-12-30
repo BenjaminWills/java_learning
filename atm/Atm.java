@@ -4,10 +4,13 @@ import atm.AtmSession;
 import atm.StorageSystem;
 
 public class Atm {
-    StorageSystem.createStoragePath();
-    static boolean sessionInProgress = true;
 
-    public static void main(String[] args){
+    
+    static boolean sessionInProgress = true;
+    
+    public static void transaction(Boolean sessionInProgress){
+        StorageSystem.createStoragePath();
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter Pin");
 
@@ -42,4 +45,8 @@ public class Atm {
         }
         scanner.close();
     }
-}
+    public static void main(String[] args){
+        transaction(sessionInProgress);
+    }}
+
+        
