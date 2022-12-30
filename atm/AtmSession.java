@@ -16,7 +16,8 @@ public class AtmSession {
         try{
         this.accessGranted = validatePin();
         }catch (Exception e){
-            e.printStackTrace();
+            System.out.println("Invalid pin");
+            System.exit(0);
         }
 
     }
