@@ -1,15 +1,16 @@
 package atm;
 import java.util.Scanner;
 import atm.AtmSession;
+import atm.StorageSystem;
 
 public class Atm {
-    String storagePath = "storage/users.txt";
+    StorageSystem.createStoragePath();
     static boolean sessionInProgress = true;
 
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter Pin");
-        
+
         String userPin = scanner.nextLine();
         AtmSession session = new AtmSession("90d999c3-8d9c-43a4-a990-7d2460074475",userPin);
 

@@ -85,11 +85,4 @@ public class StorageSystem {
         user.put(field, value);
         writeToStorage(user, storagePath);
     }
-
-    public static void main(String[] args){
-        User me = new User("Ben","Wills",21);
-        HashMap<String,Object> meHash = getUserHashMap(me);
-        createStoragePath();
-        writeToStorage(meHash,"atm/storage");
-    }
 }

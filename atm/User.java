@@ -13,9 +13,4 @@ public class User {
         this.lastName = userLastName;
         this.age = userAge;
     }
-
-    public static void main(String[] args){
-        User me = new User("Ben","Wills",21);
-        System.out.println(me.balance);
-    }
 }

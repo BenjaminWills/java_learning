@@ -48,13 +48,4 @@ public class AtmSession {
             System.out.println(String.format("Successfully Withdrew £%f!",withdrawalAmount));
         }
     }
-
-    public static void main(String[] args){
-        AtmSession session = new AtmSession("90d999c3-8d9c-43a4-a990-7d2460074475","0000");
-        System.out.println(session.user);
-        session.deposit(1000);
-        System.out.println(session.user);
-        session.withdrawal(1000);
-        System.out.println(session.user);
-    }
 }
