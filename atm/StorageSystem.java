@@ -2,6 +2,7 @@ package atm;
 import java.util.HashMap;
 import java.io.*;
 
+@SuppressWarnings("unchecked")
 public class StorageSystem {
     
     public static void createStoragePath(){
