@@ -79,13 +79,11 @@ public class StorageSystem {
     }
 
     public static void main(String[] args){
-        HashMap<String, Object> userData;
-        // User me = new User("Ben","Wills",21);
-        // createStoragePath();
-        // writeToStorage(me,"atm/storage");
-        userData = getUserFromId("caf99fac-8a4c-44d9-b680-c7f3fe084eb1", "atm/storage");
-        System.out.println(userData);
-
-        
+        // HashMap<String, Object> userData;
+        // // User me = new User("Ben","Wills",21);
+        // // createStoragePath();
+        // // writeToStorage(me,"atm/storage");
+        // userData = getUserFromId("caf99fac-8a4c-44d9-b680-c7f3fe084eb1", "atm/storage");
+        // System.out.println(userData);
     }
 }
