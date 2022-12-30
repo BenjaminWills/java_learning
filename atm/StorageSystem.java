@@ -5,25 +5,18 @@ import java.io.*;
 public class StorageSystem {
     
     static void createStoragePath(){
-        String storagePathName,directoryName;
-        storagePathName = "atm/storage/users.txt";
+        String directoryName;
         directoryName = "atm/storage";
         try{
-            File storageDirectory,storagePath ;
+            File storageDirectory ;
             storageDirectory = new File(directoryName);
             if(storageDirectory.mkdir()){
                 System.out.println("Directory Created: " + storageDirectory.getName());
             }else{
                 System.out.println("Directory already exists");
             }
-
-            storagePath = new File(storagePathName);
-            if (storagePath.createNewFile()){
-            System.out.println("File Created: " + storagePath.getName());
-            }else{
-                System.out.println("File already exists");
-            }
-        }catch (IOException e){
+        }
+        catch (Exception e){
             System.out.println("An error occured");
             e.printStackTrace();
         }finally{
@@ -47,7 +40,8 @@ public class StorageSystem {
         return userHash;
     }
 
-    static void writeToStorage(User atmUser, String storagePath){
+    static void writeToStorage(User atmUser, String storageDirectory){
+        String storagePath = storageDirectory + "/" + atmUser.id; // naminng the serialised objects after the users id
         try{
             FileOutputStream fos = new FileOutputStream(storagePath);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -63,25 +57,25 @@ public class StorageSystem {
         }
     }
 
-    static void getUserFromId(String id, String storagePath){
-        HashMap<Integer, String> userHashmap;
-        try{
-            FileInputStream fis = new FileInputStream(storagePath);
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            userHashmap = (HashMap) ois.readObject();
-            ois.close();
-            fis.close();
-        }catch(IOException e) {
-            e.printStackTrace();
-        }catch(ClassNotFoundException c){
-         System.out.println("Class not found");
-         c.printStackTrace();
-        }
-    }
+    // static void getUserFromId(String id, String storagePath){
+    //     HashMap<Integer, String> userHashmap;
+    //     try{
+    //         FileInputStream fis = new FileInputStream(storagePath);
+    //         ObjectInputStream ois = new ObjectInputStream(fis);
+    //         userHashmap = (HashMap) ois.readObject();
+    //         ois.close();
+    //         fis.close();
+    //     }catch(IOException e) {
+    //         e.printStackTrace();
+    //     }catch(ClassNotFoundException c){
+    //      System.out.println("Class not found");
+    //      c.printStackTrace();
+    //     }
+    // }
 
     public static void main(String[] args){
         User me = new User("Ben","Wills",21);
         createStoragePath();
-        writeToStorage(me,"atm/storage/users.txt");
+        writeToStorage(me,"atm/storage");
     }
 }
