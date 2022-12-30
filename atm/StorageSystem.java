@@ -78,11 +78,4 @@ public class StorageSystem {
         }
         return userData;
     }
-
-    public static void updateUser(String userId,String field,Object value){
-        String storagePath = "atm/storage";
-        HashMap<String, Object> user = getUserFromId(userId, storagePath);
-        user.put(field, value);
-        writeToStorage(user, storagePath);
-    }
 }
