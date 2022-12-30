@@ -4,7 +4,7 @@ import java.io.*;
 
 public class StorageSystem {
     
-    static void createStoragePath(){
+    public static void createStoragePath(){
         String directoryName;
         directoryName = "atm/storage";
         try{
@@ -24,7 +24,7 @@ public class StorageSystem {
         }
     }
 
-    static HashMap<String,Object> getUserHashMap(User atmUser){
+    public static HashMap<String,Object> getUserHashMap(User atmUser){
         HashMap<String,Object> userHash;
         userHash = new HashMap<>();
         try{
@@ -40,7 +40,7 @@ public class StorageSystem {
         return userHash;
     }
 
-    static void writeToStorage(User atmUser, String storageDirectory){
+    public static void writeToStorage(User atmUser, String storageDirectory){
         String storagePath = storageDirectory + "/" + atmUser.id; // naminng the serialised objects after the users id
         try{
             FileOutputStream fos = new FileOutputStream(storagePath);
@@ -57,7 +57,7 @@ public class StorageSystem {
         }
     }
 
-    static HashMap<String, Object> getUserFromId(String id, String storagePath){
+    public static HashMap<String, Object> getUserFromId(String id, String storagePath){
         HashMap<String, Object> userData = null;
         String userPath = storagePath + "/" + id;
       try
