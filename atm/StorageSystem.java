@@ -57,25 +57,35 @@ public class StorageSystem {
         }
     }
 
-    // static void getUserFromId(String id, String storagePath){
-    //     HashMap<Integer, String> userHashmap;
-    //     try{
-    //         FileInputStream fis = new FileInputStream(storagePath);
-    //         ObjectInputStream ois = new ObjectInputStream(fis);
-    //         userHashmap = (HashMap) ois.readObject();
-    //         ois.close();
-    //         fis.close();
-    //     }catch(IOException e) {
-    //         e.printStackTrace();
-    //     }catch(ClassNotFoundException c){
-    //      System.out.println("Class not found");
-    //      c.printStackTrace();
-    //     }
-    // }
+    static HashMap<String, Object> getUserFromId(String id, String storagePath){
+        HashMap<String, Object> userData = null;
+        String userPath = storagePath + "/" + id;
+      try
+      {
+         FileInputStream fis = new FileInputStream(userPath);
+         ObjectInputStream ois = new ObjectInputStream(fis);
+         userData = (HashMap<String,Object>) ois.readObject();
+         ois.close();
+         fis.close();
+        }catch(IOException e)
+        {
+            e.printStackTrace();
+        }catch(ClassNotFoundException c)
+        {
+            System.out.println("Class not found");
+            c.printStackTrace();
+        }
+        return userData;
+    }
 
     public static void main(String[] args){
-        User me = new User("Ben","Wills",21);
-        createStoragePath();
-        writeToStorage(me,"atm/storage");
+        HashMap<String, Object> userData;
+        // User me = new User("Ben","Wills",21);
+        // createStoragePath();
+        // writeToStorage(me,"atm/storage");
+        userData = getUserFromId("caf99fac-8a4c-44d9-b680-c7f3fe084eb1", "atm/storage");
+        System.out.println(userData);
+
+        
     }
 }
