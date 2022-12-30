@@ -1,8 +1,6 @@
 package atm;
 import java.util.HashMap;
 import java.util.Scanner;
-import atm.AtmSession;
-import atm.StorageSystem;
 
 public class Atm {
 
